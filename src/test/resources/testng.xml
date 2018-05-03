@@ -12,4 +12,23 @@
         </packages>
     </test>
 
+    <test name="ChromeTest for task 2">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="mentoring.task2.PayrollJobTest"/>
+        </classes>
+    </test>
+    <!--<test name="IETest for task 2">
+        <parameter name="browser" value="ie"/>
+        <classes>
+            <class name="mentoring.task2.PayrollJobTest"/>
+        </classes>
+    </test>
+    <test name="FirefoxTest for task 2">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="mentoring.task2.PayrollJobTest"/>
+        </classes>
+    </test>-->
+
 </suite>
