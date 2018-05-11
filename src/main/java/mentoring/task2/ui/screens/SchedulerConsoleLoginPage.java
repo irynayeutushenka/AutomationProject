@@ -1,37 +1,38 @@
 package mentoring.task2.ui.screens;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.FindBy;
+import ru.yandex.qatools.htmlelements.annotations.Name;
+import ru.yandex.qatools.htmlelements.element.Button;
+import ru.yandex.qatools.htmlelements.element.TextInput;
 
-public class SchedulerConsoleLoginPage extends Page {
+public class SchedulerConsoleLoginPage extends BasePage {
 
-    private By loginInput = By.name("j_username");
-    private By passwordInput = By.name("j_password");
-    private By submitButton = By.className("btn");
     private static final String URL =
-            "https://staging-scheduler.corp.globoforce.com:8539/gf-scheduler-console/";
+          "https://staging-scheduler.corp.globoforce.com:8539/gf-scheduler-console/";
+            /*"https://preprod-scheduler.corp.globoforce.com:8539/gf-scheduler-console/";*/
+
+    @Name("Login input field")
+    @FindBy(name = "j_username")
+    private TextInput loginInput;
+
+    @Name("Password input field")
+    @FindBy(name = "j_password")
+    private TextInput passwordInput;
+
+    @Name("Submit button")
+    @FindBy(className = "btn")
+    private Button submitButton;
 
     public SchedulerConsoleLoginPage(WebDriver driver) {
         super(driver);
     }
 
-    public SchedulerConsoleLoginPage openLoginPage() {
-        driver.get(URL);
-        return this;
-    }
-
-    public SchedulerConsoleLoginPage typeLogin(String login) {
-        driver.findElement(loginInput).sendKeys(login);
-        return this;
-    }
-
-    public SchedulerConsoleLoginPage typePassword(String password) {
-        driver.findElement(passwordInput).sendKeys(password);
-        return this;
-    }
-
-    public SchedulerConsolePage clickSubmit() {
-        driver.findElement(submitButton).click();
-        return new SchedulerConsolePage(driver);
+    public SchedulerConsolePage loginToSchedulerConsole(String login, String password) {
+        getWebDriver().get(URL);
+        loginInput.sendKeys(login);
+        passwordInput.sendKeys(password);
+        submitButton.click();
+        return new SchedulerConsolePage(webdriver);
     }
 }
