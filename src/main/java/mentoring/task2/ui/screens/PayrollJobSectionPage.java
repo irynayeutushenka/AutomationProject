@@ -34,7 +34,7 @@ public class PayrollJobSectionPage extends BasePage {
     WebDriverWait wait = new WebDriverWait(getWebDriver(), 20); //here, wait time is 20 seconds
 
     public SchedulerConsolePage runPayrollJobOnClientLevel(int clientId, String date) {
-        wait.until(ExpectedConditions.visibilityOf(clientIdInput)); //this will wait for elememt to be visible for 20 seconds*/
+        wait.until(ExpectedConditions.visibilityOf(clientIdInput)); //this will wait for element to be visible for 20 seconds*/
         clientIdInput.sendKeys(String.valueOf(clientId));
         dateInput.sendKeys(date);
         startJobButton.click();
@@ -42,7 +42,7 @@ public class PayrollJobSectionPage extends BasePage {
     }
 
     public SchedulerConsolePage runPayrollJobOnPayrollGroupLevel(int clientId, String date, String payrollGroup) {
-        wait.until(ExpectedConditions.visibilityOf(clientIdInput)); //this will wait for elememt to be visible for 20 seconds
+        wait.until(ExpectedConditions.visibilityOf(clientIdInput)); //this will wait for element to be visible for 20 seconds
         clientIdInput.sendKeys(String.valueOf(clientId));
         dateInput.sendKeys(date);
         payrollGroupInput.sendKeys(payrollGroup);
