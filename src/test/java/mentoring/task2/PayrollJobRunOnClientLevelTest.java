@@ -17,7 +17,7 @@ public class PayrollJobRunOnClientLevelTest extends BaseTest {
 
     private String successPayrollResult = "SUCCESS";
 
-    @Test(description = "Successful run payroll job on client level", priority = 1, dependsOnGroups = {"loginToSchedulerConsole"})
+    @Test(description = "Successful run payroll job on client level", priority = 1, groups = "payroll_test", dependsOnGroups = {"loginToSchedulerConsole"})
     public void successRunPayrollJobOnClientLevel() {
 
         new SchedulerConsoleLoginPage(getWebDriver())

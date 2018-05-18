@@ -11,7 +11,7 @@ public class LoginToSchedulerConsoleTest extends BaseTest {
     private String password = "tomcat-jobs";
     private String pageName = "Scheduler Console";
 
-    @Test(description = "Successful loginToSchedulerConsole to Scheduler Console", priority = 0, groups = {"loginToSchedulerConsole"})
+    @Test(description = "Successful loginToSchedulerConsole to Scheduler Console", priority = 0, groups = {"loginToSchedulerConsole", "payroll_test"})
     public void successLogin() {
 
         new SchedulerConsoleLoginPage(getWebDriver())
