@@ -14,7 +14,7 @@ public class BaseTest {
 
     @Parameters("browser")
 
-    @BeforeMethod(description = "Set up webdriver depending on browser")
+    @BeforeMethod(description = "Set up webdriver depending on browser", groups = "payroll_test")
     public void startDriver(@Optional("chrome") String browser) {
         if (browser.equalsIgnoreCase("chrome")) {
             /*System.setProperty("webdriver.chrome.driver", "D:\\IdeaProjects\\AutomationProject\\src\\test\\resources\\drivers\\chromedriver.exe");*/
@@ -33,7 +33,7 @@ public class BaseTest {
         webDriver.manage().window().maximize();
     }
 
-    @AfterMethod(description = "Quit browser", alwaysRun = true)
+    @AfterMethod(description = "Quit browser", alwaysRun = true, groups = "payroll_test")
     public void closeWebDriver() {
         if (webDriver != null)
             webDriver.quit();
