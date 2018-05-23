@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 public class DivLongTest extends Configuration {
 
-        @Test(description = "Division of 10 and 5 is 2", groups = "smoke_test")
+    @Test(description = "Division of 10 and 5 is 2", groups = "smoke_test")
     public void divPositiveValues() {
         long actual = calculator.div(10, 5);
         Assert.assertEquals(actual, 2, "Result of division is incorrect");
