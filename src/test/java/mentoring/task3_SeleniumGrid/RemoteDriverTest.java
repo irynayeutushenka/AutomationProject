@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -16,7 +17,7 @@ public class RemoteDriverTest {
     @Parameters({"browser", "platform"})
 
     @Test(description = "Page title is correct")
-    public void test(String browser, String platform) throws MalformedURLException {
+    public void test(@Optional("chrome") String browser, @Optional("WINDOWS") String platform) throws MalformedURLException {
         DesiredCapabilities cap = new DesiredCapabilities();
         if (platform.equalsIgnoreCase("WINDOWS")) {
             cap.setPlatform(Platform.WINDOWS);
