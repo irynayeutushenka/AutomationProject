@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
@@ -12,11 +13,24 @@ import java.net.URL;
 
 public class RemoteDriverTest {
 
-    @Test (description = "Page title is correct")
-    public void test() throws MalformedURLException {
+    @Parameters({"browser", "platform"})
+
+    @Test(description = "Page title is correct")
+    public void test(String browser, String platform) throws MalformedURLException {
         DesiredCapabilities cap = new DesiredCapabilities();
-        cap.setBrowserName("chrome");
-        cap.setPlatform(Platform.WINDOWS);
+        if (platform.equalsIgnoreCase("WINDOWS")) {
+            cap.setPlatform(Platform.WINDOWS);
+        } else if (platform.equalsIgnoreCase("LINUX")) {
+            cap.setPlatform(Platform.LINUX);
+        }
+
+        if (browser.equalsIgnoreCase("chrome")) {
+            cap.setBrowserName("chrome");
+        } else if (browser.equalsIgnoreCase("firefox")) {
+            cap.setBrowserName("firefox");
+        } else if (browser.equalsIgnoreCase("ie")) {
+            cap.setBrowserName("ie");
+        }
         URL url = new URL("http://10.9.126.6:4444/wd/hub");
         WebDriver driver = new RemoteWebDriver(url, cap);
         driver.get("https://www.globoforce.com/");

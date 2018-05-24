@@ -2,8 +2,10 @@
 
 <suite name="Only Remote Driver task" verbose="1">
     <test name="Regression tests for task3">
-        <packages>
-            <package name="mentoring.task3"/>
-        </packages>
+        <parameter name="browser" value="chrome"/>
+        <parameter name="platform" value="WINDOWS"/>
+        <classes>
+            <class name="mentoring.task3_SeleniumGrid.RemoteDriverTest"/>
+        </classes>
     </test>
 </suite>

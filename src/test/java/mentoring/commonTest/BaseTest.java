@@ -12,7 +12,7 @@ public class BaseTest {
 
     private WebDriver webDriver;
 
-    @Parameters("browser")
+    @Parameters({"browser"})
 
     @BeforeClass(description = "Set up webdriver depending on browser", groups = "payroll_test")
     public void startDriver(@Optional("chrome") String browser) {
