@@ -1,0 +1,28 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="All tasks" verbose="1" parallel="methods">
+    <test name="ChromeTest for task 2">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="tests.payrollJob_task2.LoginToSchedulerConsoleTest"/>
+            <class name="tests.payrollJob_task2.PayrollJobRunOnClientLevelTest"/>
+            <class name="tests.payrollJob_task2.PayrollJobRunOnPayrollGroupLevelTest"/>
+        </classes>
+    </test>
+     <test name="FirefoxTest for task 2">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="tests.payrollJob_task2.LoginToSchedulerConsoleTest"/>
+             <class name="tests.payrollJob_task2.PayrollJobRunOnClientLevelTest"/>
+             <class name="tests.payrollJob_task2.PayrollJobRunOnPayrollGroupLevelTest"/>
+        </classes>
+    </test>
+    <test name="IETest for task 2">
+        <parameter name="browser" value="ie"/>
+        <classes>
+            <class name="tests.payrollJob_task2.LoginToSchedulerConsoleTest"/>
+            <class name="tests.payrollJob_task2.PayrollJobRunOnClientLevelTest"/>
+            <class name="tests.payrollJob_task2.PayrollJobRunOnPayrollGroupLevelTest"/>
+        </classes>
+    </test>
+</suite>
