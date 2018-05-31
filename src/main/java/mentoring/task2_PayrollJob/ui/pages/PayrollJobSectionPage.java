@@ -1,5 +1,6 @@
-package mentoring.task2.ui.screens;
+package mentoring.task2_PayrollJob.ui.pages;
 
+import mentoring.common.pages.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;

@@ -1,14 +1,15 @@
 package mentoring.task2;
 
-import mentoring.task2.ui.screens.SchedulerConsoleLoginPage;
-import mentoring.task2.ui.screens.SchedulerConsolePage;
+import mentoring.commonTest.BaseTest;
+import mentoring.task2_PayrollJob.ui.pages.SchedulerConsoleLoginPage;
+import mentoring.task2_PayrollJob.ui.pages.SchedulerConsolePage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class PayrollJobRunOnPayrollGroupLevelTest extends BaseTest {
 
-    private String userName = "tomcat-jobs";
-    private String password = "tomcat-jobs";
+    private final String userName = "tomcat-jobs";
+    private final String password = "tomcat-jobs";
 
     private int clientId = 5003;
     private String date = "SYSDATE";
