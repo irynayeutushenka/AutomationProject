@@ -1,25 +1,25 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="All tasks" verbose="1" parallel="methods">
+<suite name="All tasks" verbose="1">
     <test name="ChromeTest for task 5">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="tests.configAppTests.awardDetailsFileTests.ChangePayrollCommentTest"/>
-            <class name="tests.configAppTests.awardProgramsTests_task4_Actions.SwapAwardProgramsTest"/>
+            <class name="tests.config_app_tests.award_details_file_tests.ChangePayrollCommentTest"/>
+            <class name="tests.config_app_tests.award_programs_tests.SwapAwardProgramsTest"/>
         </classes>
     </test>
     <test name="FirefoxTest for task 5">
         <parameter name="browser" value="firefox"/>
         <classes>
-            <class name="tests.configAppTests.awardDetailsFileTests.ChangePayrollCommentTest"/>
-            <class name="tests.configAppTests.awardProgramsTests_task4_Actions.SwapAwardProgramsTest"/>
+            <class name="tests.config_app_tests.award_details_file_tests.ChangePayrollCommentTest"/>
+            <class name="tests.config_app_tests.award_programs_tests.SwapAwardProgramsTest"/>
         </classes>
     </test>
     <test name="IETest for task 5">
         <parameter name="browser" value="ie"/>
         <classes>
-            <class name="tests.configAppTests.awardDetailsFileTests.ChangePayrollCommentTest"/>
-            <class name="tests.configAppTests.awardProgramsTests_task4_Actions.SwapAwardProgramsTest"/>
+            <class name="tests.config_app_tests.award_details_file_tests.ChangePayrollCommentTest"/>
+            <class name="tests.config_app_tests.award_programs_tests.SwapAwardProgramsTest"/>
         </classes>
     </test>
 </suite>

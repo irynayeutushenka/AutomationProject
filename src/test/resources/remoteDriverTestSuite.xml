@@ -5,7 +5,7 @@
         <parameter name="browser" value="chrome"/>
         <parameter name="platform" value="WINDOWS"/>
         <classes>
-            <class name="tests.loginToGlobofoce_task3_SeleniumGrid.RemoteDriverTest"/>
+            <class name="tests.login_to_globofoce_selenium_grid.RemoteDriverTest"/>
         </classes>
     </test>
 </suite>
