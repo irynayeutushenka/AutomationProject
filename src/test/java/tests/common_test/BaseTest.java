@@ -30,9 +30,7 @@ public class BaseTest {
 
     @AfterClass
     public void quitWebDriver() {
-        if (webDriver != null) {
-            webDriver.quit();
-        }
+        webDriver.quit();
     }
 
     protected WebDriver getWebDriver() {

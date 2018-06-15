@@ -7,7 +7,6 @@ import tests.common_test.BaseTest;
 import page_objects.config_app_pages.award_program_pages.AwardProgramsPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import utilities.Logger;
 
 import static business_objects.TestClients.CLIENT_5021;
 import static service_classes.login_service.LoginService.loginToIaf;
@@ -18,7 +17,7 @@ public class SwapAwardProgramsTest extends BaseTest {
 
     @Test(description = "Successful swapping of award programs for 5021 client")
     public void swapAwardProgramsTest() {
-        Logger.info("Log in into IAF");
+        logger.info("Log in into IAF");
         loginToIaf(getWebDriver(), iafConsoleUser);
         new IafHomePage(getWebDriver())
                 .openConfigApp()
@@ -27,12 +26,12 @@ public class SwapAwardProgramsTest extends BaseTest {
 
         String textInitial = new AwardProgramsPage(getWebDriver())
                 .getTextOfFirstProgram();
-        Logger.info("1st program BEFORE movement is " + textInitial);
+        logger.info("1st program BEFORE movement is " + textInitial);
 
         new AwardProgramsPage(getWebDriver())
                 .moveAwardProgram();
         String textUpdated = new AwardProgramsPage(getWebDriver()).getTextOfFirstProgram();
-        Logger.info("1st program AFTER movement is " + textUpdated);
+        logger.info("1st program AFTER movement is " + textUpdated);
 
         if (textInitial.contains("testclient5021 program")) {
             Assert.assertTrue(textUpdated.contains("Service Anniversaries"));
