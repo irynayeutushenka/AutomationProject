@@ -7,6 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import page_objects.config_app_pages.common_config_app_pages.IafHomePage;
 import tests.common_test.BaseTest;
+import utilities.Logger;
 
 import static business_objects.TestClients.CLIENT_5012;
 import static service_classes.login_service.LoginService.loginToIaf;
@@ -15,9 +16,11 @@ public class ChangePayrollCommentTest extends BaseTest {
 
     UserBO iafConsoleUser = UserFactory.createIafConsoleUser();
 
-    @Test(description = "Successful adding new schedule for 5012 client", priority = 0)
+    @Test(description = "Successful adding new schedule for 5012 client")
     public void changePayrollComment() {
+        Logger.info("Log in into IAF");
         loginToIaf(getWebDriver(), iafConsoleUser);
+        Logger.info("Updating the comment of the payroll group");
         new IafHomePage(getWebDriver())
                 .openConfigApp()
                 .clickClientLink(CLIENT_5012.getConfigAppName())
