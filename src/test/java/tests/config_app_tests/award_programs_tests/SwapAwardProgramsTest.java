@@ -2,11 +2,9 @@ package tests.config_app_tests.award_programs_tests;
 
 import business_objects.UserBO;
 import business_objects.UserFactory;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import page_objects.config_app_pages.common_config_app_pages.IafHomePage;
 import tests.common_test.BaseTest;
 import page_objects.config_app_pages.award_program_pages.AwardProgramsPage;
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -25,30 +23,19 @@ public class SwapAwardProgramsTest extends BaseTest {
                 .clickClientLink(CLIENT_5021.getConfigAppName())
                 .moveToAwardPrograms();
 
-        String textInitial = getWebDriver().findElement
-                (By.xpath("//tbody[@class='yui-dt-data']/tr[1]//a")).getText();
+        String textInitial = new AwardProgramsPage(getWebDriver())
+                .getTextOfFirstProgram();
         System.out.println("1st program BEFORE movement is " + textInitial);
 
+        new AwardProgramsPage(getWebDriver())
+                .moveAwardProgram();
+        String textUpdated = new AwardProgramsPage(getWebDriver()).getTextOfFirstProgram();
+        System.out.println("1st program AFTER movement is " + textUpdated);
+
         if (textInitial.contains("testclient5021 program")) {
-            new AwardProgramsPage(getWebDriver())
-                    .moveAwardProgram();
-
-            String textUpdated = getWebDriver().findElement
-                    (By.xpath("//tbody[@class='yui-dt-data']/tr[1]//a")).getText();
-
-            System.out.println("Case1: 1st program AFTER movement is " + textUpdated);
-
             Assert.assertTrue(textUpdated.contains("Service Anniversaries"));
         }
         if (textInitial.contains("Service Anniversaries")) {
-            new AwardProgramsPage(getWebDriver())
-                    .moveAwardProgram();
-
-            String textUpdated = getWebDriver().findElement
-                    (By.xpath("//tbody[@class='yui-dt-data']/tr[1]//a")).getText();
-
-            System.out.println("Case2: 1st program AFTER movement is " + textUpdated);
-
             Assert.assertTrue(textUpdated.contains("testclient5021 program"));
         }
     }

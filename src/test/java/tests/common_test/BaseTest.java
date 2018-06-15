@@ -15,19 +15,14 @@ public class BaseTest {
     @BeforeClass
     public void beforeTest(@Optional("chrome") String browser) {
         driverManager = DriverManagerFactory.getManager(browser);
-    }
-
-    @BeforeMethod
-    public void beforeMethod() {
         webDriver = driverManager.getInstance();
     }
 
     @AfterMethod
-    public void closeWebDriver() {
+    public void quitWebDriver() {
         if (webDriver != null) {
             webDriver.quit();
         }
-        webDriver = null;
     }
 
     protected WebDriver getWebDriver() {

@@ -17,6 +17,10 @@ public class AwardProgramsPage extends BasePage {
     @FindBy(xpath = "//a[text() = 'testclient5021 program']")
     private HtmlElement testclient5021AwardProgram;
 
+    @Name("First program in the list")
+    @FindBy(xpath = "//tbody[@class='yui-dt-data']/tr[1]//a")
+    private HtmlElement firstProgram;
+
     public AwardProgramsPage(WebDriver driver) {
         super(driver);
     }
@@ -33,5 +37,9 @@ public class AwardProgramsPage extends BasePage {
                 .build()
                 .perform();
         return this;
+    }
+
+    public String getTextOfFirstProgram() {
+        return firstProgram.getText();
     }
 }

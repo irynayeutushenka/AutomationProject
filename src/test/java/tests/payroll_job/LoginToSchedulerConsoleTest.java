@@ -15,7 +15,7 @@ public class LoginToSchedulerConsoleTest extends BaseTest {
 
     UserBO schedulerConsoleUser = UserFactory.createSchedulerConsoleUser();
 
-    @Test(description = "Successful login to Scheduler Console", priority = 0,
+    @Test(description = "Successful login to Scheduler Console",
             groups = {"loginToSchedulerConsole", "payroll_test"})
     public void successLogin() {
         loginToSchedulerConsole(getWebDriver(), schedulerConsoleUser);
