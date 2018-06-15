@@ -4,25 +4,25 @@
     <test name="ChromeTest for task 2">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="tests.payrollJob_task2.LoginToSchedulerConsoleTest"/>
-            <class name="tests.payrollJob_task2.PayrollJobRunOnClientLevelTest"/>
-            <class name="tests.payrollJob_task2.PayrollJobRunOnPayrollGroupLevelTest"/>
+            <class name="tests.payroll_job.LoginToSchedulerConsoleTest"/>
+            <class name="tests.payroll_job.PayrollJobRunOnClientLevelTest"/>
+            <class name="tests.payroll_job.PayrollJobRunOnPayrollGroupLevelTest"/>
         </classes>
     </test>
-     <test name="FirefoxTest for task 2">
+    <test name="FirefoxTest for task 2">
         <parameter name="browser" value="firefox"/>
         <classes>
-            <class name="tests.payrollJob_task2.LoginToSchedulerConsoleTest"/>
-             <class name="tests.payrollJob_task2.PayrollJobRunOnClientLevelTest"/>
-             <class name="tests.payrollJob_task2.PayrollJobRunOnPayrollGroupLevelTest"/>
+            <class name="tests.payroll_job.LoginToSchedulerConsoleTest"/>
+            <class name="tests.payroll_job.PayrollJobRunOnClientLevelTest"/>
+            <class name="tests.payroll_job.PayrollJobRunOnPayrollGroupLevelTest"/>
         </classes>
     </test>
-    <test name="IETest for task 2">
+    <!--<test name="IETest for task 2">
         <parameter name="browser" value="ie"/>
         <classes>
-            <class name="tests.payrollJob_task2.LoginToSchedulerConsoleTest"/>
-            <class name="tests.payrollJob_task2.PayrollJobRunOnClientLevelTest"/>
-            <class name="tests.payrollJob_task2.PayrollJobRunOnPayrollGroupLevelTest"/>
+            <class name="tests.payroll_job.LoginToSchedulerConsoleTest"/>
+            <class name="tests.payroll_job.PayrollJobRunOnClientLevelTest"/>
+            <class name="tests.payroll_job.PayrollJobRunOnPayrollGroupLevelTest"/>
         </classes>
-    </test>
+    </test>-->
 </suite>

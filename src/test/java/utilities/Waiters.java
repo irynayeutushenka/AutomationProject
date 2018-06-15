@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import pageObjects.BasePage;
+import page_objects.BasePage;
 
 public class Waiters extends BasePage {
 
