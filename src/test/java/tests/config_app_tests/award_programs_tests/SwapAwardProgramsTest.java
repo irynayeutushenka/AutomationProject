@@ -15,8 +15,9 @@ public class SwapAwardProgramsTest extends BaseTest {
 
     UserBO iafConsoleUser = UserFactory.createIafConsoleUser();
 
-    @Test(description = "Successful swapping of award programs for 5021 client", priority = 0)
-    public void swapAwardProgramsTest() throws InterruptedException {
+    @Test(description = "Successful swapping of award programs for 5021 client")
+    public void swapAwardProgramsTest() {
+        logger.info("Log in into IAF");
         loginToIaf(getWebDriver(), iafConsoleUser);
         new IafHomePage(getWebDriver())
                 .openConfigApp()
@@ -25,12 +26,12 @@ public class SwapAwardProgramsTest extends BaseTest {
 
         String textInitial = new AwardProgramsPage(getWebDriver())
                 .getTextOfFirstProgram();
-        System.out.println("1st program BEFORE movement is " + textInitial);
+        logger.info("1st program BEFORE movement is " + textInitial);
 
         new AwardProgramsPage(getWebDriver())
                 .moveAwardProgram();
         String textUpdated = new AwardProgramsPage(getWebDriver()).getTextOfFirstProgram();
-        System.out.println("1st program AFTER movement is " + textUpdated);
+        logger.info("1st program AFTER movement is " + textUpdated);
 
         if (textInitial.contains("testclient5021 program")) {
             Assert.assertTrue(textUpdated.contains("Service Anniversaries"));

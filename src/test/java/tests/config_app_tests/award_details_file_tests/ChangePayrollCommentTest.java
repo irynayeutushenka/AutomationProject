@@ -15,9 +15,11 @@ public class ChangePayrollCommentTest extends BaseTest {
 
     UserBO iafConsoleUser = UserFactory.createIafConsoleUser();
 
-    @Test(description = "Successful adding new schedule for 5012 client", priority = 0)
+    @Test(description = "Successful adding new schedule for 5012 client")
     public void changePayrollComment() {
+        logger.info("Log in into IAF");
         loginToIaf(getWebDriver(), iafConsoleUser);
+        logger.info("Updating the comment of the payroll group");
         new IafHomePage(getWebDriver())
                 .openConfigApp()
                 .clickClientLink(CLIENT_5012.getConfigAppName())

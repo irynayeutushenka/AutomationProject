@@ -18,8 +18,10 @@ public class LoginToSchedulerConsoleTest extends BaseTest {
     @Test(description = "Successful login to Scheduler Console",
             groups = {"loginToSchedulerConsole", "payroll_test"})
     public void successLogin() {
+        logger.info("Log in to Scheduler Console");
         loginToSchedulerConsole(getWebDriver(), schedulerConsoleUser);
         SchedulerConsolePage schedulerConsoleScreen = new SchedulerConsolePage(getWebDriver());
+        logger.info("Verify the page name");
         Assert.assertEquals(schedulerConsoleScreen.getMainMenuLinkText(), pageName, "BasePage name is incorrect");
     }
 }

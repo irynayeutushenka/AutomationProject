@@ -21,12 +21,15 @@ public class PayrollJobRunOnPayrollGroupLevelTest extends BaseTest {
     @Test(description = "Successful run payroll job on payroll group level", priority = 2,
             groups = "payroll_test", dependsOnGroups = {"loginToSchedulerConsole"})
     public void successRunPayrollJobOnPayrollGroupLevel() {
+        logger.info("Log in to Scheduler Console");
         loginToSchedulerConsole(getWebDriver(), schedulerConsoleUser);
+        logger.info("Run Payroll job on group level");
         new SchedulerConsolePage(getWebDriver())
                 .openPayrollJobSectionPage()
                 .runPayrollJobOnPayrollGroupLevel(CLIENT_5003.getId(), date, payrollGroup);
 
         SchedulerConsolePage schedulerConsolePage = new SchedulerConsolePage(getWebDriver());
+        logger.info("Verify the result of job run");
         Assert.assertEquals(schedulerConsolePage.getPayrollResultMessageText(), successPayrollResult,
                 "Unexpected result of payroll job run");
     }
